@@ -1,0 +1,37 @@
+<div *ngIf="famille.length==0" class="alert alert-warning"> el tableau feraagh !!  </div>
+<table  class="table">
+    <thead>
+        <tr>
+            <td>#</td>
+            <td>nom</td>
+            <td>prenom</td>
+            <td>phone</td>
+            <td>street</td>
+            <td>zip</td>
+            <td>##</td>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let membreFamille of famille">
+            <td></td>
+            <td>{{membreFamille.nom}}</td>
+            <td>{{membreFamille.prenom}}</td>
+            <td>{{membreFamille.phone}}</td>
+            <td>{{membreFamille.pays.street}}</td>
+            <td>{{membreFamille.pays.zip}}</td>
+            <td> <button (click)="delete(membreFamille)" class="btn btn-danger">delete</button> </td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="alert" [ngClass]="{'alert-warning' : isError,'alert-success' : !isError}" >i'm variation alert</div>
+
+<ul *ngFor="let membre of tab;let i = index">
+    <li>
+        {{membre}}
+        <button (click)="deletM(membre,i)" class="btn btn-danger">
+            <i class="fas fa-trash"></i>
+        </button>
+    </li>
+</ul>

@@ -1,0 +1,23 @@
+<div class="container">
+    <form [formGroup]="myForm" (ngSubmit)="sendUser()" class="form-group">
+        <div class="form-row">
+            <div class="form-group col">
+                <label for="nom" id="nom">nom</label>
+                <input class="form-control" formControlName="nom" type="text" name="nom" id="nom">
+                <div *ngIf="nom.touched && nom.invalid">
+                    <div *ngIf="nom.errors.required" class="text-danger">name is required</div>
+                    <div *ngIf="nom.errors.pattern" class="text-danger">name is invalid</div>
+                    <div *ngIf="nom.errors.minlength" class="text-danger">name lezmo al klila ykoun mn 2 caratteres</div>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col">
+                <input class="btn btn-primary" [disabled]="myForm.invalid" type="submit" value="send">
+            </div>
+
+        </div>
+
+
+    </form>
+</div>

@@ -1,0 +1,53 @@
+<div *ngIf="tab.length==0" class="alert alert-warning">
+    tableau vide !!
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <td>#</td>
+            <td>nom</td>
+            <td>prenom</td>
+            <td>age</td>
+            <td>city</td>
+            <td>#</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let x of tab;let i=index">
+            <td>
+                {{i}}
+            </td>
+            <td>
+                {{x.nom}}
+            </td>
+            <td>
+                {{x.prenom}}
+            </td>
+            <td>
+                {{x.age}}
+            </td>
+            <td>
+                {{x.city}}
+            </td>
+            <td>
+                <button (click)="delet(x)" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div *ngIf="tab2.length==0" class="alert alert-danger">ul vide</div>
+<ul *ngFor="let elemTab of tab2;let i = index">
+    <li>
+        {{elemTab}}
+        <button (click)="delet2(elemTab,i)" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+    </li>
+</ul>
+
+
+<form [formGroup]="myform" (ngSubmit)="getUser()">
+    <label for="email" id="email">email</label>
+    <input  formControlName="email" type="email" name="email" id="email">
+    <div  class="text-danger">email invalid</div>
+
+    <input type="submit" value="send">
+</form>

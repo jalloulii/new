@@ -1,0 +1,34 @@
+<h1 *ngIf="TF">la3beed : </h1>
+<br>
+<ul *ngFor="let i of abed">
+    <li>
+        {{i}}
+    </li>
+</ul>
+<h1 *ngIf="abed.length==0" class="alert alert-danger">no books found</h1>
+
+
+
+<h2 *ngIf="employe.length==0" class="alert alert-warning">tableau fera8</h2>
+<table  class="table">
+    <thead>
+        <tr>
+            <td>#</td>
+            <td>FirstName</td>
+            <td>last name</td>
+            <td>phone</td>
+            <td>#</td>
+           
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let j of employe">
+            <td> {{j.id}} </td>
+            <td>  {{j.firstname}} </td>
+            <td>{{j.lastname}} </td>
+            <td>{{j.phone}} </td>
+            <td><button (click)="delet(j)" class="btn btn-danger">delet</button></td>
+        </tr>
+    </tbody>
+</table>
